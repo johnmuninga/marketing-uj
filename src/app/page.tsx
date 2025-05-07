@@ -1,103 +1,305 @@
-import Image from "next/image";
+// app/page.tsx
+'use client'
 
-export default function Home() {
+import Image from 'next/image'
+import Link from 'next/link'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent } from '@/components/ui/card'
+import {
+  Globe,
+  Mic2,
+  BarChart2,
+  Link2,
+  CheckCircle2,
+  Truck,
+  User,
+  Package,
+  PieChart,
+  Phone,
+  Mail,
+} from 'lucide-react'
+
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <>
+      {/* 1. Welcome Banner */}
+      <section className="bg-gray-600 text-white py-20">
+        <div className="container mx-auto text-center space-y-6">
+          <h1 className="text-4xl font-extrabold flex items-center justify-center gap-2">
+            <Globe size={32} /> Welcome to Blockchain Agriculture <Mic2 size={32} />
+          </h1>
+          <p className="text-xl max-w-2xl mx-auto">
+            Empowering South African farmers through technology
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button variant="outline" className="text-black border-white hover:bg-white hover:text-gray-800">
+              Learn More
+            </Button>
+            <Button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900">
+              Register as Farmer
+            </Button>
+            <Button className="bg-blue-400 hover:bg-blue-500 text-white">
+              Register as Retailer
+            </Button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+      </section>
+
+      {/* 2. Dashboard Overview */}
+      <section className="bg-white py-16">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-10 flex items-center justify-center gap-2 text-gray-800">
+            <BarChart2 size={28} className="text-green-600" /> Dashboard Overview
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { icon: Link2, label: 'Blockchain Traceability' },
+              { icon: CheckCircle2, label: 'Verified Farmers' },
+              { icon: Truck, label: 'Logistics Status' },
+              { icon: Package, label: 'Inventory Levels' },
+            ].map((item) => (
+              <Card key={item.label} className="flex flex-col border-t-4 border-green-600 items-center justify-center p-6 hover:shadow-xl transition">
+                <item.icon size={36} className="text-green-600 mb-4" />
+                <span className="font-medium text-gray-700">{item.label}</span>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Choose Your Role */}
+      <section className="bg-purple-200 py-16">
+        <div className="container mx-auto text-center">
+          <h3 className="text-2xl font-semibold mb-6 flex items-center justify-center gap-2 text-gray-800">
+            <User size={24} className="text-green-600" /> Choose Your Role
+          </h3>
+          <div className="flex flex-wrap justify-center gap-6">
+            <Button className="bg-green-600 hover:bg-green-700 text-white px-6 py-3">
+              Register as Farmer
+            </Button>
+            <Button className="bg-yellow-500 hover:bg-yellow-600 text-black px-6 py-3">
+              Register as Retailer
+            </Button>
+            <Button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3">
+              Logistics Partner Signup
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Featured Produce Listings */}
+      <section className="bg-yellow-50 py-16">
+        <div className="container mx-auto">
+          <h3 className="text-3xl font-bold text-center mb-10 flex items-center justify-center gap-2 text-gray-800">
+            <PieChart size={28} className="text-green-600" /> Featured Produce Listings
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+            {[
+              { emoji: '🍅', name: 'Organic Tomatoes', region: 'Limpopo' },
+              { emoji: '🥬', name: 'Spinach', region: 'Eastern Cape' },
+              { emoji: '🐄', name: 'Beef', region: 'Free State' },
+            ].map((item) => (
+             
+              <Card className="mx-auto w-80 border-2 border-yellow-400 rounded-lg overflow-hidden">
+              {/* Image wrapper for centered cropping */}
+              <div className="bg-white p-4 flex justify-center">
+              <div className="text-5xl mb-4">{item.emoji}</div>
+              </div>
+        
+              <CardContent className="px-6 py-4 text-center">
+                <h3 className="text-xl font-semibold flex items-center justify-center mb-2">
+                  <span className="mr-2">🍅</span>{item.name}
+                </h3>
+                <p className="text-gray-700 mb-4">
+                {item.region}
+                </p>
+                <Button className="bg-green-600 hover:bg-green-700 text-white w-full">
+                  View Contract
+                </Button>
+              </CardContent>
+            </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Trusted Logistics Partners */}
+      <section className="bg-blue-50 py-16">
+        <div className="container mx-auto text-center">
+          <h3 className="text-3xl font-bold mb-8 flex items-center justify-center gap-2 text-gray-800">
+            <Truck size={28} className="text-green-600" /> Trusted Logistics Partners
+          </h3>
+          <div className="flex flex-wrap justify-center gap-6">
+            {['Vector Logistics', 'Imperial', 'Barloworld'].map((name) => (
+              <Button
+                key={name}
+                variant="outline"
+                className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white px-5 py-2"
+              >
+                {name}
+              </Button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6. Insights & Tools */}
+      <section className="bg-white py-16">
+        <div className="container mx-auto">
+          <h3 className="text-3xl font-bold text-center mb-10 flex items-center justify-center gap-2 text-gray-800">
+            <BarChart2 size={28} className="text-green-600" /> Insights & Tools
+          </h3>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+            {['Market Trends', 'Price Index', 'Weather by Region', 'Climate Impact Zones'].map((tool) => (
+              <Card key={tool} className="p-6 hover:shadow-md transition">
+                {tool}
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 7. Multi-language Support */}
+      <section className="bg-green-300 py-16">
+        <div className="container mx-auto text-center space-y-4">
+          <h3 className="text-3xl font-bold flex items-center justify-center gap-2 text-gray-800">
+            <Globe size={28} className="text-green-600" /> Multi-language Support
+          </h3>
+          <div className="flex flex-wrap justify-center gap-6 text-xl">
+            {['🇿🇦 IsiZulu', '🇿🇦 Sesotho', '🇿🇦 Afrikaans', '🇿🇦 English'].map(l => (
+              <span key={l} className="px-4 py-2 bg-white rounded shadow">{l}</span>
+            ))}
+            <Button variant="outline" className="ml-4 px-5 py-2">
+              Voice Commands Beta
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* 8. Utility Links */}
+      <section className="bg-gray-100 py-16">
+        <div className="container mx-auto text-center">
+          <div className="flex flex-wrap justify-center gap-8 text-gray-800">
+            {['Smart Contract Templates', 'Payments', 'Track My Order'].map(link => (
+              <Link
+                key={link}
+                href="#"
+                className="underline text-lg hover:text-green-600 transition"
+              >
+                {link}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 9. Bottom Nav */}
+      {/* <section className="bg-gray-200 py-12">
+        <div className="container mx-auto text-center">
+          <div className="flex flex-wrap justify-center gap-8 text-gray-800">
+            {['Testimonials', 'Privacy & Compliance', 'Contact Us', 'Terms of Use'].map(item => (
+              <Link
+                key={item}
+                href="#"
+                className="underline hover:text-green-600 transition"
+              >
+                {item}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section> */}
+      <footer className="bg-green-700 text-white pt-12 pb-6">
+      {/* Top links */}
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Quick Links */}
+        <div>
+          <h4 className="text-xl font-semibold mb-4">Quick Links</h4>
+          <ul className="space-y-2">
+            <li>
+              <Link href="/resources/farmers" className="text-yellow-300 hover:underline">
+                Farmer Resources
+              </Link>
+            </li>
+            <li>
+              <Link href="/onboarding/retailer" className="text-yellow-300 hover:underline">
+                Retailer Onboarding
+              </Link>
+            </li>
+            <li>
+              <Link href="/compliance/bbbee" className="text-yellow-300 hover:underline">
+                BBBEE Compliance
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Legal */}
+        <div>
+          <h4 className="text-xl font-semibold mb-4">Legal</h4>
+          <ul className="space-y-2">
+            <li>
+              <Link href="/terms" className="text-yellow-300 hover:underline">
+                Terms of Use
+              </Link>
+            </li>
+            <li>
+              <Link href="/privacy" className="text-yellow-300 hover:underline">
+                Privacy Policy
+              </Link>
+            </li>
+            <li>
+              <Link href="/smart-contracts" className="text-yellow-300 hover:underline">
+                Smart Contract Docs
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Contact */}
+        <div>
+          <h4 className="text-xl font-semibold mb-4">Contact</h4>
+          <ul className="space-y-2">
+            <li className="flex items-center space-x-2">
+              <Phone size={16} />
+              <span>0800 123 456</span>
+            </li>
+            <li className="flex items-center space-x-2">
+              <Mail size={16} />
+              <Link href="mailto:hello@bentickagri.co.za" className="text-yellow-300 hover:underline">
+                hello@bentickagri.co.za
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Divider */}
+      <div className="container mx-auto border-t border-green-600 mt-8" />
+
+      {/* Logos */}
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-center gap-8 mt-8">
+        <Image
+          src="/Bbb.png"
+          alt="BBBEE Level 1"
+          width={120}
+          height={40}
+          className="object-contain"
+        />
+        <Image
+          src="/hyperledger.png"
+          alt="Powered by Hyperledger"
+          width={120}
+          height={40}
+          className="object-contain"
+        />
+      </div>
+
+      {/* Copyright */}
+      <p className="text-center text-gray-300 text-sm mt-6">
+        © 2025 BENTICK³ | Powered by Hyperledger | South Africa za
+      </p>
+    </footer>
+    </>
+  )
 }

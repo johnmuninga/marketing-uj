@@ -23,7 +23,7 @@ export default function HomePage() {
   return (
     <>
       {/* 1. Welcome Banner */}
-      <section className="bg-gray-600 text- px-4 py-20">
+      <section className="bg-gray-600 text-white px-4 py-20">
         <div className="container mx-auto text-center space-y-6">
           <h1 className="text-4xl font-extrabold flex items-center justify-center gap-2">
             <Globe size={32} /> Welcome to Blockchain Agriculture <Mic2 size={32} />

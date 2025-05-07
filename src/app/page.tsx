@@ -287,7 +287,7 @@ export default function HomePage() {
           className="object-contain"
         />
         <Image
-          src="/hyperledger.png"
+          src="/Hyperledger.png"
           alt="Powered by Hyperledger"
           width={120}
           height={40}

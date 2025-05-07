@@ -23,7 +23,7 @@ export default function HomePage() {
   return (
     <>
       {/* 1. Welcome Banner */}
-      <section className="bg-gray-600 text-white py-20">
+      <section className="bg-gray-600 text- px-4 py-20">
         <div className="container mx-auto text-center space-y-6">
           <h1 className="text-4xl font-extrabold flex items-center justify-center gap-2">
             <Globe size={32} /> Welcome to Blockchain Agriculture <Mic2 size={32} />
@@ -46,7 +46,7 @@ export default function HomePage() {
       </section>
 
       {/* 2. Dashboard Overview */}
-      <section className="bg-white py-16">
+      <section className="bg-white px-4 py-16">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-center mb-10 flex items-center justify-center gap-2 text-gray-800">
             <BarChart2 size={28} className="text-green-600" /> Dashboard Overview
@@ -68,7 +68,7 @@ export default function HomePage() {
       </section>
 
       {/* 3. Choose Your Role */}
-      <section className="bg-purple-200 py-16">
+      <section className="bg-purple-200 px-4 py-16">
         <div className="container mx-auto text-center">
           <h3 className="text-2xl font-semibold mb-6 flex items-center justify-center gap-2 text-gray-800">
             <User size={24} className="text-green-600" /> Choose Your Role
@@ -88,7 +88,7 @@ export default function HomePage() {
       </section>
 
       {/* 4. Featured Produce Listings */}
-      <section className="bg-yellow-50 py-16">
+      <section className="bg-yellow-50 px-4 py-16">
         <div className="container mx-auto">
           <h3 className="text-3xl font-bold text-center mb-10 flex items-center justify-center gap-2 text-gray-800">
             <PieChart size={28} className="text-green-600" /> Featured Produce Listings
@@ -124,7 +124,7 @@ export default function HomePage() {
       </section>
 
       {/* 5. Trusted Logistics Partners */}
-      <section className="bg-blue-50 py-16">
+      <section className="bg-blue-50 px-4 py-16">
         <div className="container mx-auto text-center">
           <h3 className="text-3xl font-bold mb-8 flex items-center justify-center gap-2 text-gray-800">
             <Truck size={28} className="text-green-600" /> Trusted Logistics Partners
@@ -144,7 +144,7 @@ export default function HomePage() {
       </section>
 
       {/* 6. Insights & Tools */}
-      <section className="bg-white py-16">
+      <section className="bg-white px-4 py-16">
         <div className="container mx-auto">
           <h3 className="text-3xl font-bold text-center mb-10 flex items-center justify-center gap-2 text-gray-800">
             <BarChart2 size={28} className="text-green-600" /> Insights & Tools
@@ -160,7 +160,7 @@ export default function HomePage() {
       </section>
 
       {/* 7. Multi-language Support */}
-      <section className="bg-green-300 py-16">
+      <section className="bg-green-300 px-4 py-16">
         <div className="container mx-auto text-center space-y-4">
           <h3 className="text-3xl font-bold flex items-center justify-center gap-2 text-gray-800">
             <Globe size={28} className="text-green-600" /> Multi-language Support
@@ -177,7 +177,7 @@ export default function HomePage() {
       </section>
 
       {/* 8. Utility Links */}
-      <section className="bg-gray-100 py-16">
+      <section className="bg-gray-100 px-4 py-16">
         <div className="container mx-auto text-center">
           <div className="flex flex-wrap justify-center gap-8 text-gray-800">
             {['Smart Contract Templates', 'Payments', 'Track My Order'].map(link => (
@@ -209,7 +209,7 @@ export default function HomePage() {
           </div>
         </div>
       </section> */}
-      <footer className="bg-green-700 text-white pt-12 pb-6">
+      <footer className="bg-green-700 text-white px-4 pt-12 pb-6">
       {/* Top links */}
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Quick Links */}

@@ -108,7 +108,7 @@ export default function HomePage() {
         
               <CardContent className="px-6 py-4 text-center">
                 <h3 className="text-xl font-semibold flex items-center justify-center mb-2">
-                  <span className="mr-2">🍅</span>{item.name}
+                  {item.name}
                 </h3>
                 <p className="text-gray-700 mb-4">
                 {item.region}

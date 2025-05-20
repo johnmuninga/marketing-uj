@@ -49,7 +49,7 @@ export default function HomePage() {
       <section className="bg-white px-4 py-16">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-center mb-10 flex items-center justify-center gap-2 text-gray-800">
-            <BarChart2 size={28} className="text-green-600" /> Dashboard Overvie
+            <BarChart2 size={28} className="text-green-600" /> Dashboard Overview
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
